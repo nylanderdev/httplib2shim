@@ -43,7 +43,7 @@ def _default_make_pool(http, proxy_info):
 
     cert_reqs = 'CERT_REQUIRED' if http.ca_certs and not ssl_disabled else None
 
-    if isinstance(proxy_info, collections.Callable):
+    if isinstance(proxy_info, collections.abc.Callable):
         proxy_info = proxy_info()
     if proxy_info:
         if proxy_info.proxy_user and proxy_info.proxy_pass:
